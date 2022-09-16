@@ -5,6 +5,9 @@
  */
 package helloworldproject;
 
+import helloworldproject.model.FileModelImp;
+import helloworldproject.model.InterfaceModel;
+
 /**
  *
  * @author haize
@@ -15,7 +18,8 @@ public class HelloWorldProject {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        InterfaceModel interMod = new FileModelImp();
+        System.out.println(interMod.getGreeting());
     }
     
 }
