@@ -9,6 +9,12 @@ package helloworldproject.ui;
  *
  * @author haize
  */
-public interface InterfaceUI {
-        public void showGreeting(String greeting);
+public class TextViewDF {
+        private static InterfaceUI tUI;
+    public static InterfaceUI getView() {
+        if (tUI == null) {
+            tUI = new TextViewImp();
+        }
+        return tUI;
+    }
 }

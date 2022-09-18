@@ -5,8 +5,12 @@
  */
 package helloworldproject;
 
-import helloworldproject.model.FileModelImp;
+import helloworldproject.controller.Controller;
+import helloworldproject.model.FileModelDF;
 import helloworldproject.model.InterfaceModel;
+import helloworldproject.ui.InterfaceUI;
+import helloworldproject.ui.TextViewDF;
+import java.util.ResourceBundle;
 
 /**
  *
@@ -18,8 +22,35 @@ public class HelloWorldProject {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        InterfaceModel interMod = new FileModelImp();
-        System.out.println(interMod.getGreeting());
+        ResourceBundle bundle = ResourceBundle.getBundle("helloworldproject.config");
+        String storage = bundle.getString("STORAGE_TYPE");
+        String view = bundle.getString("VIEW_TYPE");
+        
+        InterfaceModel model = getModel(storage);
+        InterfaceUI cView = getView(view);
+        
+        Controller.run(cView,model);
     }
     
+    public static InterfaceUI getView(String view) {
+        InterfaceUI cView;
+        if (view.equalsIgnoreCase("Text")) {
+            cView = TextViewDF.getView();
+        } else {
+            // Cambiar duplicado. Solo para pruebas
+            cView = TextViewDF.getView();
+        }
+        return cView;
+    }
+    
+    public static InterfaceModel getModel(String storage) {
+        InterfaceModel model;
+        if (storage.equalsIgnoreCase("File")) {
+            model = FileModelDF.getModel();
+        } else {
+            // Cambiar duplicado. Solo para pruebas
+            model = FileModelDF.getModel();
+        }
+        return model;
+    }
 }

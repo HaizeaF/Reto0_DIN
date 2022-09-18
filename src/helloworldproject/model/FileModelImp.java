@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  * @author haize
  */
 public class FileModelImp implements InterfaceModel {
-    File file = new File("greeting.obj");
+    File file = new File("src/helloworldproject/model/greeting.obj");
     BufferedReader br = null;
     String greeting = null;
 

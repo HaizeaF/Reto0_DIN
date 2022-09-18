@@ -9,6 +9,12 @@ package helloworldproject.ui;
  *
  * @author haize
  */
-public interface InterfaceUI {
-        public void showGreeting(String greeting);
+public class TextViewImp implements InterfaceUI {
+
+    @Override
+    public void showGreeting(String greeting) {
+        System.out.println(greeting);
+      
+    }
+    
 }
