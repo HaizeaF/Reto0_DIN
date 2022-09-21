@@ -6,6 +6,7 @@
 package helloworldproject;
 
 import helloworldproject.controller.Controller;
+import helloworldproject.model.DBModelDF;
 import helloworldproject.model.FileModelDF;
 import helloworldproject.model.InterfaceModel;
 import helloworldproject.ui.InterfaceUI;
@@ -29,7 +30,8 @@ public class HelloWorldProject {
         InterfaceModel model = getModel(storage);
         InterfaceUI cView = getView(view);
         
-        Controller.run(cView,model);
+        Controller controller = new Controller();
+        controller.run(cView,model);
     }
     
     public static InterfaceUI getView(String view) {
@@ -49,7 +51,7 @@ public class HelloWorldProject {
             model = FileModelDF.getModel();
         } else {
             // Cambiar duplicado. Solo para pruebas
-            model = FileModelDF.getModel();
+            model = DBModelDF.getModel();
         }
         return model;
     }

@@ -13,7 +13,7 @@ import helloworldproject.ui.InterfaceUI;
  * @author haize
  */
 public class Controller {
-    public static void run(InterfaceUI cView,InterfaceModel model) {
+    public void run(InterfaceUI cView,InterfaceModel model) {
         cView.showGreeting(model.getGreeting());
     }
 }
