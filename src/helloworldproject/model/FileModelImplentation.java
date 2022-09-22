@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  *
  * @author haize
  */
-public class FileModelImp implements InterfaceModel {
+public class FileModelImplentation implements Model {
     File file = new File("src/helloworldproject/model/greeting.obj");
     BufferedReader br = null;
     String greeting = null;
@@ -30,9 +30,9 @@ public class FileModelImp implements InterfaceModel {
             br = new BufferedReader(new InputStreamReader(new FileInputStream(file),StandardCharsets.UTF_8));
             greeting = br.readLine();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(FileModelImp.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FileModelImplentation.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(FileModelImp.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FileModelImplentation.class.getName()).log(Level.SEVERE, null, ex);
         }
        return greeting;
     }

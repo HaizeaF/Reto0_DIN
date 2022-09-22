@@ -9,6 +9,12 @@ package helloworldproject.model;
  *
  * @author haize
  */
-public interface InterfaceModel {
-        public String getGreeting();
+public class FileModelFactory {
+    private static Model fModel;
+    public static Model getModel() {
+        if (fModel == null) {
+            fModel = new FileModelImplentation();
+        }
+        return fModel;
+    }
 }

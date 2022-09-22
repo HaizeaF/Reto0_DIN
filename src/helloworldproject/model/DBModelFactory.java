@@ -7,14 +7,17 @@ package helloworldproject.model;
 
 /**
  *
- * @author haize
+ * @author Julen
  */
-public class FileModelDF {
-    private static InterfaceModel fModel;
-    public static InterfaceModel getModel() {
-        if (fModel == null) {
-            fModel = new FileModelImp();
+public class DBModelFactory {
+
+    private static Model dbModel;
+
+    public static Model getModel() {
+        if (dbModel == null) {
+            dbModel = new DBModelImplentation();
         }
-        return fModel;
+        return dbModel;
     }
+
 }

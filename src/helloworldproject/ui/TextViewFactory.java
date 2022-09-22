@@ -9,11 +9,11 @@ package helloworldproject.ui;
  *
  * @author haize
  */
-public class TextViewDF {
-        private static InterfaceUI tUI;
-    public static InterfaceUI getView() {
+public class TextViewFactory {
+        private static View tUI;
+    public static View getView() {
         if (tUI == null) {
-            tUI = new TextViewImp();
+            tUI = new TextViewImplementation();
         }
         return tUI;
     }

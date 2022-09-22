@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  *
  * @author Julen
  */
-public class DBModelImp implements InterfaceModel {
+public class DBModelImplentation implements Model {
     
     private ResourceBundle bdConfig;
     private String url;
@@ -59,19 +59,19 @@ public class DBModelImp implements InterfaceModel {
             try {
                 sttmt.close();
             } catch (SQLException ex) {
-                Logger.getLogger(DBModelImp.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(DBModelImplentation.class.getName()).log(Level.SEVERE, null, ex);
             }
         }if(connetion != null){
             try {
                 connetion.close();
             } catch (SQLException ex) {
-                Logger.getLogger(DBModelImp.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(DBModelImplentation.class.getName()).log(Level.SEVERE, null, ex);
             }
         }if(rs != null){
                 try {
                     rs.close();
                 } catch (SQLException ex) {
-                    Logger.getLogger(DBModelImp.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(DBModelImplentation.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         
@@ -90,6 +90,7 @@ public class DBModelImp implements InterfaceModel {
             sttmt = connetion.prepareStatement(selectGreeting);
             
             rs = sttmt.executeQuery();
+            rs.next();
             
             greeting = rs.getString("greeting");
        
