@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  *
  * @author Julen
  */
-public class DBModelImplentation implements Model {
+public class DBModelImplementation implements Model {
     
     private ResourceBundle bdConfig;
     private String url;
@@ -59,19 +59,19 @@ public class DBModelImplentation implements Model {
             try {
                 sttmt.close();
             } catch (SQLException ex) {
-                Logger.getLogger(DBModelImplentation.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(DBModelImplementation.class.getName()).log(Level.SEVERE, null, ex);
             }
         }if(connetion != null){
             try {
                 connetion.close();
             } catch (SQLException ex) {
-                Logger.getLogger(DBModelImplentation.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(DBModelImplementation.class.getName()).log(Level.SEVERE, null, ex);
             }
         }if(rs != null){
                 try {
                     rs.close();
                 } catch (SQLException ex) {
-                    Logger.getLogger(DBModelImplentation.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(DBModelImplementation.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         
