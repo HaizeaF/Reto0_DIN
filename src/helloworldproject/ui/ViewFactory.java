@@ -15,9 +15,9 @@ public class ViewFactory {
         if (ui == null) {
             if (view.equalsIgnoreCase("Text")) {
                 ui = new TextViewImplementation();
-            } else {
+            } else if (view.equalsIgnoreCase("JavaFX")){
                 ui = new FXViewImplementation();
-            }
+            } 
             
         }
         return ui;
