@@ -5,6 +5,8 @@
  */
 package helloworldproject.model;
 
+import helloworldproject.exception.ModelTypeException;
+
 /**
  *
  * @author Julen

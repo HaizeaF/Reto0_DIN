@@ -1,14 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package helloworldproject.ui;
 
 /**
- *
- * @author haize
+ * This class is an interface that contains one method called "showGreeting".
+ * @author Julen
  */
 public interface View {
+    
+    /**
+     * This method showsGreeting shows a message.
+     * @param greeting String with the greeting.
+     */
         public void showGreeting(String greeting);
+        
 }

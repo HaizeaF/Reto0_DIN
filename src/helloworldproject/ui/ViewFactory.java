@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package helloworldproject.ui;
+
+import helloworldproject.exception.ViewTypeException;
 
 /**
  *
- * @author haize
+ * @author Julen
  */
 public class ViewFactory {
         private static View ui;
