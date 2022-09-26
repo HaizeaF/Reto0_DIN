@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package helloworldproject.model;
 
 /**
- *
+ * This is the model interface which includes the method to get the greeting.
  * @author haize
  */
 public interface Model {

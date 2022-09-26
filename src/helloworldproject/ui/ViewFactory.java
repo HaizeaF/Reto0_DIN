@@ -5,6 +5,8 @@
  */
 package helloworldproject.ui;
 
+import helloworldproject.exception.ViewTypeException;
+
 /**
  *
  * @author haize
