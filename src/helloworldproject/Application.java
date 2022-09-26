@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import helloworldproject.ui.View;
 import helloworldproject.model.Model;
 import helloworldproject.model.ModelTypeException;
+import helloworldproject.ui.ViewTypeException;
 
 /**
  *
@@ -22,8 +23,9 @@ public class Application {
     /**
      * @param args the command line arguments
      * @throws helloworldproject.model.ModelTypeException
+     * @throws helloworldproject.ui.ViewTypeException
      */
-    public static void main(String[] args) throws ModelTypeException {
+    public static void main(String[] args) throws ModelTypeException, ViewTypeException {
         ResourceBundle bundle = ResourceBundle.getBundle("helloworldproject.config");
         String storage = bundle.getString("STORAGE_TYPE");
         String view = bundle.getString("VIEW_TYPE");

@@ -20,7 +20,7 @@ public class ModelFactory {
             } else if (storage.equalsIgnoreCase("Database") || storage.equalsIgnoreCase("DB")){
                 model = new DBModelImplementation();
             } else {
-                throw new ModelTypeException();
+                throw new ModelTypeException("Invalid model type. File/Database please.");
             }
         }
         return model;
