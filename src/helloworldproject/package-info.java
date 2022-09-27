@@ -1,4 +1,4 @@
 /*
- * This is where the application starts, takes values from config.properties and sends it to the Model and the View.
+ * This is the main package of the project which includes the main class and the configuration of the application.
  */
 package helloworldproject;

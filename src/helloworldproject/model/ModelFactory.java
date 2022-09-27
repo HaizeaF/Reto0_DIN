@@ -1,20 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package helloworldproject.model;
 
 import helloworldproject.exception.ModelTypeException;
 
 /**
- *
+ * This class is the Data Factory of the model. It creates the model implementation controlling which one is needed.
  * @author Julen
  */
 public class ModelFactory {
 
     private static Model model;
-
+    
+    /**
+     * This is the method which controls and creates the models;
+     * @param storage The model type specified in the configuration file.
+     * @return The specific model implementation.
+     * @throws ModelTypeException Exception that controls the type of model introduced. 
+     */
     public static Model getModel(String storage) throws ModelTypeException {
         if (model == null) {
             if (storage.equalsIgnoreCase("File")) {

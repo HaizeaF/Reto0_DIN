@@ -17,8 +17,8 @@ public class Application {
 
     /**
      * @param args the command line arguments
-     * @throws helloworldproject.exception.ModelTypeException
-     * @throws helloworldproject.exception.ViewTypeException
+     * @throws helloworldproject.exception.ModelTypeException Exception that controls the type of model introduced.
+     * @throws helloworldproject.exception.ViewTypeException Exception that controls the type of view introduced.
      */
     public static void main(String[] args) throws ModelTypeException, ViewTypeException {
         ResourceBundle bundle = ResourceBundle.getBundle("helloworldproject.config");
