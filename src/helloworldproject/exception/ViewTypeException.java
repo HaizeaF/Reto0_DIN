@@ -7,7 +7,7 @@ package helloworldproject.exception;
 
 /**
  *
- * @author haize
+ * @author Julen and Haizea
  */
 public class ViewTypeException extends Exception {
     public ViewTypeException() {
