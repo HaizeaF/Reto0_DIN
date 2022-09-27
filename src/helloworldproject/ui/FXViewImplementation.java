@@ -10,7 +10,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
- * This class implements the method "showGreeting" from the View class and creates the User Interface.
+ * This class implements the method "showGreeting" from the View class and creates the UI.
  * @author Julen
  */
 public class FXViewImplementation extends Application implements View {
