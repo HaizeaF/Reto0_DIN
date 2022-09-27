@@ -2,7 +2,7 @@ package helloworldproject.ui;
 
 /**
  * This class implements the method "showGreeting" from the View class and shows it in the console.
- * @author Julen
+ * @author Julen and Haizea
  */
 public class TextViewImplementation implements View {
 

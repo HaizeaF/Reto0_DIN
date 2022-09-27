@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 /**
  * This class implements the method "showGreeting" from the View class and creates the UI.
- * @author Julen
+ * @author Julen and Haizea
  */
 public class FXViewImplementation extends Application implements View {
  

@@ -2,7 +2,7 @@ package helloworldproject.ui;
 
 /**
  * This class is an interface that contains one method called "showGreeting".
- * @author Julen
+ * @author Julen and Haizea
  */
 public interface View {
     
