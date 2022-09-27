@@ -11,7 +11,7 @@ import helloworldproject.exception.ViewTypeException;
 
 /**
  * This is the pilar of the proyect and where the program will run.
- * @author sendoa
+ * @author Julen and Haizea
  */
 public class Application {
 
