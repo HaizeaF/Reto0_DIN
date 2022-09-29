@@ -19,21 +19,23 @@ import javafx.stage.Stage;
  * @author 2dam
  */
 public class FXViewImplementation extends Application implements View {
-    
+ 
     @Override
     public void start(Stage primaryStage) {
+        String param = getParameters().getRaw().get(0);
+        StackPane root = new StackPane();
+        
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
             public void handle(ActionEvent event) {
-                Label greeting = new Label();
-                
+                btn.setVisible(false);
+                Label greetingLabel = new Label(param);
+                root.getChildren().add(greetingLabel);
             }
         });
-        
-        StackPane root = new StackPane();
         root.getChildren().add(btn);
         
         Scene scene = new Scene(root, 300, 250);
@@ -43,16 +45,9 @@ public class FXViewImplementation extends Application implements View {
         primaryStage.show();
     }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
-    }
-
     @Override
     public void showGreeting(String greeting) {
-        System.out.println(greeting);
+       launch(greeting);
     }
     
 }
