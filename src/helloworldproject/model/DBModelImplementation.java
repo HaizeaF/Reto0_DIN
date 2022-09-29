@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 /**
  * This class is the implementation of the model with database connection. This class implements the model interface.
- * @author Julen
+ * @author Julen and Haizea
  */
 public class DBModelImplementation implements Model {
 

@@ -1,6 +1,3 @@
-/*
- *
- */
 package helloworldproject.exception;
 
 /**

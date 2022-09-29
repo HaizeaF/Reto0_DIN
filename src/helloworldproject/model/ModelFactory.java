@@ -4,7 +4,7 @@ import helloworldproject.exception.ModelTypeException;
 
 /**
  * This class is the Data Factory of the model. It creates the model implementation controlling which one is needed.
- * @author Julen
+ * @author Julen and Haizea
  */
 public class ModelFactory {
 

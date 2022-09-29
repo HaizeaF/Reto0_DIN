@@ -4,7 +4,7 @@ import helloworldproject.ui.View;
 import helloworldproject.model.Model;
 
 /**
- *This class is the intermediate that takes the info from the model and sends it to the View.
+ *This class is the controler that takes the info from the model and sends it to the View.
  * @author Julen
  */
 public class Controller {

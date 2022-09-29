@@ -5,7 +5,7 @@ import helloworldproject.exception.ViewTypeException;
 /**
  * This class is the Factory that makes the decision of what View is gonna show, 
  * Text(Console) or JavaFX(UI) 
- * @author Julen
+ * @author Julen and Haizea
  */
 public class ViewFactory {
         private static View ui;

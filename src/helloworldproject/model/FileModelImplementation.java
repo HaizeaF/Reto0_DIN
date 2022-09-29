@@ -4,7 +4,7 @@ import java.util.ResourceBundle;
 
 /**
  * This class is the implementation of the model with a file. This class implements the model interface.
- * @author haize
+ * @author Julen and Haizea
  */
 public class FileModelImplementation implements Model {
      ResourceBundle bundle = ResourceBundle.getBundle("helloworldproject.config");
