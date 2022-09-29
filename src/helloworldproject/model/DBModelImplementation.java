@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package helloworldproject.model;
 
 import java.sql.Connection;
@@ -15,46 +10,37 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author Julen
+ * This class is the implementation of the model with database connection. This class implements the model interface.
+ * @author Julen and Haizea
  */
 public class DBModelImplementation implements Model {
-    
-    private ResourceBundle bdConfig;
-    private String url;
-    private String user;
-    private String password;
+
     private Connection connetion;
     private PreparedStatement sttmt = null;
     private ResultSet rs = null;
     
     final String selectGreeting = "SELECT GREETING FROM GREETINGS WHERE GREETING_ID = 1;";
     
+    ResourceBundle bdConfig = ResourceBundle.getBundle("helloworldproject.model.dbconfig");
+    private final String url = bdConfig.getString("URL");
+    private final String user = bdConfig.getString("USER");
+    private final String password = bdConfig.getString("PASSWORD");
     
-    public void connectionBD(){
-        
-        bdConfig = ResourceBundle.getBundle("helloworldproject.model.dbconfig");
-        url = bdConfig.getString("URL");
-        user = bdConfig.getString("USER");
-        password = bdConfig.getString("PASSWORD");
-        
-    }
-    
+    /**
+     * This method opens the connection with the database.
+     */
     public void openConnection(){
-        
-        connectionBD();
-        
         try {
             connetion = DriverManager.getConnection(url,user,password);
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-        
-        
     }
     
+    /**
+     * This method closes the statements, the connection and the resultset if they are open.
+     */
     public void closeConnection(){
-        
         if(sttmt != null){
             try {
                 sttmt.close();
@@ -77,23 +63,23 @@ public class DBModelImplementation implements Model {
         
     }
     
-
+    /**
+     * This method gets the greeting via id.
+     * @return greeting obtained from the database.
+     */
     @Override
     public String getGreeting() {
-        
         String greeting = null;
         
         this.openConnection();
         
         try {
-            
             sttmt = connetion.prepareStatement(selectGreeting);
             
             rs = sttmt.executeQuery();
             rs.next();
             
             greeting = rs.getString("greeting");
-       
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }finally{
@@ -101,7 +87,6 @@ public class DBModelImplementation implements Model {
         }
         
         return greeting;
-        
     }
     
 }

@@ -1,6 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* 
+ * This package is in charge of implementing all the View part such as Console View or UI View. 
  */
 package helloworldproject.ui;

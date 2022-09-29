@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package helloworldproject;
 
 import helloworldproject.controller.Controller;
@@ -11,19 +6,19 @@ import helloworldproject.ui.ViewFactory;
 import java.util.ResourceBundle;
 import helloworldproject.ui.View;
 import helloworldproject.model.Model;
-import helloworldproject.model.ModelTypeException;
-import helloworldproject.ui.ViewTypeException;
+import helloworldproject.exception.ModelTypeException;
+import helloworldproject.exception.ViewTypeException;
 
 /**
- *
- * @author haize
+ * This is the pilar of the proyect and where the program will run.
+ * @author Julen and Haizea
  */
 public class Application {
 
     /**
      * @param args the command line arguments
-     * @throws helloworldproject.model.ModelTypeException
-     * @throws helloworldproject.ui.ViewTypeException
+     * @throws helloworldproject.exception.ModelTypeException Exception that controls the type of model introduced.
+     * @throws helloworldproject.exception.ViewTypeException Exception that controls the type of view introduced.
      */
     public static void main(String[] args) throws ModelTypeException, ViewTypeException {
         ResourceBundle bundle = ResourceBundle.getBundle("helloworldproject.config");

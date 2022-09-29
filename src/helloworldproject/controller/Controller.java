@@ -1,18 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package helloworldproject.controller;
 
 import helloworldproject.ui.View;
 import helloworldproject.model.Model;
 
 /**
- *
- * @author haize
+ *This class is the controler that takes the info from the model and sends it to the View.
+ * @author Julen
  */
 public class Controller {
+    /**
+     * This method takes the greeting from the model class and shows it in the View.
+     * @param cView This is the View Class where is sent the greeting.
+     * @param model This is the Model Class where takes the greeting.
+     */
+    
     public void run(View cView,Model model) {
         cView.showGreeting(model.getGreeting());
     }
