@@ -16,28 +16,24 @@ import static org.junit.Assert.*;
  */
 public class FileModelImplementationTest {
     
-    public FileModelImplementationTest() {
-    }
+    private static FileModelImplementation instance;
     
     @BeforeClass
     public static void setUpClass() {
+        instance = new FileModelImplementation();
     }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
     /**
      * Test of getGreeting method, of class FileModelImplementation.
      */
     @Test
     public void testGetGreeting() {
         System.out.println("getGreeting");
-        FileModelImplementation instance = new FileModelImplementation();
-        String expResult = "";
+        String expResult = "Hello World!!! File";
+        String notResult = "Hello World!!! DB";
         String result = instance.getGreeting();
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+        assertNotNull("Null result",result);
+        assertEquals("Not file result",expResult, result);
+        assertNotEquals("DB result",notResult, result);
     }
     
 }

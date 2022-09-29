@@ -6,9 +6,9 @@
 package helloworldproject.model;
 
 import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.BeforeClass;
 
 /**
  *
@@ -16,50 +16,30 @@ import static org.junit.Assert.*;
  */
 public class DBModelImplementationTest {
     
-    public DBModelImplementationTest() {
-    }
+    private static DBModelImplementation instance;
     
     @BeforeClass
     public static void setUpClass() {
+        instance = new DBModelImplementation();
+        instance.openConnection();
     }
     
     @AfterClass
     public static void tearDownClass() {
-    }
-
-    /**
-     * Test of openConnection method, of class DBModelImplementation.
-     */
-    @Test
-    public void testOpenConnection() {
-        System.out.println("openConnection");
-        DBModelImplementation instance = new DBModelImplementation();
-        instance.openConnection();
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of closeConnection method, of class DBModelImplementation.
-     */
-    @Test
-    public void testCloseConnection() {
-        System.out.println("closeConnection");
-        DBModelImplementation instance = new DBModelImplementation();
         instance.closeConnection();
-        fail("The test case is a prototype.");
     }
-
     /**
      * Test of getGreeting method, of class DBModelImplementation.
      */
     @Test
     public void testGetGreeting() {
         System.out.println("getGreeting");
-        DBModelImplementation instance = new DBModelImplementation();
-        String expResult = "";
+        String expResult = "Hello World!!! DB";
+        String notResult = "Hello World!!! File";
         String result = instance.getGreeting();
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+        assertNotNull("Null result",result);
+        assertEquals("Not DB result",expResult, result);
+        assertNotEquals("File result",notResult, result);
     }
     
 }
