@@ -9,6 +9,12 @@ package helloworldproject.ui;
  *
  * @author haize
  */
-public interface InterfaceUI {
-        public void showGreeting(String greeting);
+public class FXViewFactory {
+        private static FXViewImplementation fxUI;
+    public static View getView() {
+        if (fxUI == null) {
+            fxUI = new FXViewImplementation();
+        }
+        return fxUI;
+    }
 }

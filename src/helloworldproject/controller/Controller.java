@@ -5,15 +5,15 @@
  */
 package helloworldproject.controller;
 
-import helloworldproject.model.InterfaceModel;
-import helloworldproject.ui.InterfaceUI;
+import helloworldproject.ui.View;
+import helloworldproject.model.Model;
 
 /**
  *
  * @author haize
  */
 public class Controller {
-    public void run(InterfaceUI cView,InterfaceModel model) {
+    public void run(View cView,Model model) {
         cView.showGreeting(model.getGreeting());
     }
 }

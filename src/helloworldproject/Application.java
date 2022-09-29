@@ -6,18 +6,19 @@
 package helloworldproject;
 
 import helloworldproject.controller.Controller;
-import helloworldproject.model.DBModelDF;
-import helloworldproject.model.FileModelDF;
-import helloworldproject.model.InterfaceModel;
-import helloworldproject.ui.InterfaceUI;
-import helloworldproject.ui.TextViewDF;
+import helloworldproject.model.DBModelFactory;
+import helloworldproject.model.FileModelFactory;
+import helloworldproject.ui.TextViewFactory;
 import java.util.ResourceBundle;
+import helloworldproject.ui.View;
+import helloworldproject.model.Model;
+import helloworldproject.ui.FXViewFactory;
 
 /**
  *
  * @author haize
  */
-public class HelloWorldProject {
+public class Application {
 
     /**
      * @param args the command line arguments
@@ -27,31 +28,31 @@ public class HelloWorldProject {
         String storage = bundle.getString("STORAGE_TYPE");
         String view = bundle.getString("VIEW_TYPE");
         
-        InterfaceModel model = getModel(storage);
-        InterfaceUI cView = getView(view);
+        Model model = getModel(storage);
+        View cView = getView(view);
         
         Controller controller = new Controller();
         controller.run(cView,model);
     }
     
-    public static InterfaceUI getView(String view) {
-        InterfaceUI cView;
+    public static View getView(String view) {
+        View cView;
         if (view.equalsIgnoreCase("Text")) {
-            cView = TextViewDF.getView();
+            cView = TextViewFactory.getView();
         } else {
             // Cambiar duplicado. Solo para pruebas
-            cView = TextViewDF.getView();
+            cView = FXViewFactory.getView();
         }
         return cView;
     }
     
-    public static InterfaceModel getModel(String storage) {
-        InterfaceModel model;
+    public static Model getModel(String storage) {
+        Model model;
         if (storage.equalsIgnoreCase("File")) {
-            model = FileModelDF.getModel();
+            model = FileModelFactory.getModel();
         } else {
             // Cambiar duplicado. Solo para pruebas
-            model = DBModelDF.getModel();
+            model = DBModelFactory.getModel();
         }
         return model;
     }
