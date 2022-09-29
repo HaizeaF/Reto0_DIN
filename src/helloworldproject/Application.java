@@ -6,13 +6,11 @@
 package helloworldproject;
 
 import helloworldproject.controller.Controller;
-import helloworldproject.model.DBModelFactory;
-import helloworldproject.model.FileModelFactory;
-import helloworldproject.ui.TextViewFactory;
+import helloworldproject.model.ModelFactory;
+import helloworldproject.ui.ViewFactory;
 import java.util.ResourceBundle;
 import helloworldproject.ui.View;
 import helloworldproject.model.Model;
-import helloworldproject.ui.FXViewFactory;
 
 /**
  *
@@ -28,32 +26,10 @@ public class Application {
         String storage = bundle.getString("STORAGE_TYPE");
         String view = bundle.getString("VIEW_TYPE");
         
-        Model model = getModel(storage);
-        View cView = getView(view);
+        Model model = ModelFactory.getModel(storage);
+        View cView = ViewFactory.getView(view);
         
         Controller controller = new Controller();
         controller.run(cView,model);
-    }
-    
-    public static View getView(String view) {
-        View cView;
-        if (view.equalsIgnoreCase("Text")) {
-            cView = TextViewFactory.getView();
-        } else {
-            // Cambiar duplicado. Solo para pruebas
-            cView = FXViewFactory.getView();
-        }
-        return cView;
-    }
-    
-    public static Model getModel(String storage) {
-        Model model;
-        if (storage.equalsIgnoreCase("File")) {
-            model = FileModelFactory.getModel();
-        } else {
-            // Cambiar duplicado. Solo para pruebas
-            model = DBModelFactory.getModel();
-        }
-        return model;
     }
 }
