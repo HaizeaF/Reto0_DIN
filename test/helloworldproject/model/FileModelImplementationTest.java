@@ -16,11 +16,11 @@ import static org.junit.Assert.*;
  */
 public class FileModelImplementationTest {
     
-    private static FileModelImplementation instance;
+    private static FileModelImplementation model;
     
     @BeforeClass
     public static void setUpClass() {
-        instance = new FileModelImplementation();
+        model = new FileModelImplementation();
     }
     /**
      * Test of getGreeting method, of class FileModelImplementation.
@@ -28,9 +28,9 @@ public class FileModelImplementationTest {
     @Test
     public void testGetGreeting() {
         System.out.println("getGreeting");
-        String expResult = "Hello World!!! File";
-        String notResult = "Hello World!!! DB";
-        String result = instance.getGreeting();
+        String expResult = "Hello World!!! Lorea";
+        String notResult = "Hello World!!! 2dam";
+        String result = model.getGreeting();
         assertNotNull("Null result",result);
         assertEquals("Not file result",expResult, result);
         assertNotEquals("DB result",notResult, result);

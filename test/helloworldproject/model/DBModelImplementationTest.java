@@ -16,17 +16,17 @@ import org.junit.BeforeClass;
  */
 public class DBModelImplementationTest {
     
-    private static DBModelImplementation instance;
+    private static DBModelImplementation model;
     
     @BeforeClass
     public static void setUpClass() {
-        instance = new DBModelImplementation();
-        instance.openConnection();
+        model = new DBModelImplementation();
+        model.openConnection();
     }
     
     @AfterClass
     public static void tearDownClass() {
-        instance.closeConnection();
+        model.closeConnection();
     }
     /**
      * Test of getGreeting method, of class DBModelImplementation.
@@ -34,9 +34,9 @@ public class DBModelImplementationTest {
     @Test
     public void testGetGreeting() {
         System.out.println("getGreeting");
-        String expResult = "Hello World!!! DB";
-        String notResult = "Hello World!!! File";
-        String result = instance.getGreeting();
+        String expResult = "Hello World!!! 2dam";
+        String notResult = "Hello World!!! Lorea";
+        String result = model.getGreeting();
         assertNotNull("Null result",result);
         assertEquals("Not DB result",expResult, result);
         assertNotEquals("File result",notResult, result);
